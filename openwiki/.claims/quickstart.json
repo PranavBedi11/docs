@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:149e737d3d01e7b4c948796c28a437bdae7b62cb53da350eb236a9e41a804c4e",
+  "pageVersion": "sha256:6099c6ab676415f6596bfe6cf2679a06b89b5db72bbd6ac4d9c5286867bb0b1c",
   "claims": [
     {
       "id": "claim_d8d8a35bd795404f8072491acc9f3276",
@@ -8,7 +8,7 @@
       "evidence": [
         {
           "resource": "repo://AGENTS.md",
-          "version": "repo-file-v1:sha256:3f42c97d1ca4b76fed8973cddb288f6359fee3d7829f3e6f00620bd095ed6266"
+          "version": "repo-file-v1:sha256:235aa9158172d20c15e273b3663859ad8432848a1ace93595936739e9b63d161"
         },
         {
           "resource": "repo://README.md#L3-L6",
@@ -76,7 +76,7 @@
       "evidence": [
         {
           "resource": "repo://AGENTS.md",
-          "version": "repo-file-v1:sha256:3f42c97d1ca4b76fed8973cddb288f6359fee3d7829f3e6f00620bd095ed6266"
+          "version": "repo-file-v1:sha256:235aa9158172d20c15e273b3663859ad8432848a1ace93595936739e9b63d161"
         },
         {
           "resource": "repo://README.md#L78-L85",
@@ -226,7 +226,7 @@
         },
         {
           "resource": "repo://AGENTS.md#L184-L212",
-          "version": "repo-lines-v1:sha256:0531d4870ef0e25f26d9bc45a349103ccc1afdab00480d9b88584d51b7ab35be:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjllNzNjNzMzM2IzODYxY2Y4MTAxOGJmMGM2YjNkOGVhYmIwMTgzMzBkNzYwZDllMDkxZDYzOGUwOGVkODgyMGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJjODBmMjRkMDRlNzc4Zjk3M2ZkMDA2M2ExZGVjNTFiNDZiZTY1MWI1YzdjOGYxODhjMmRlYTc0ZGY2OWRkOTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQxN2Y1YmUxZGMyMTg1YzgyNmI1Yjk3OWY4ZjgwZjE4OTEyZGNiYTY5MTdmNzQxNzI2ZjJiZGY5OGY0ZDFiZmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZiNDkzYjJkNzRhZThkN2JmOTE4MTY2ODRmMTI3ZGE5YWJlNmU3YzM1YzIxODUyZmM0MjQ1NzE1MWQxNWViMDUifQ"
+          "version": "repo-lines-v1:sha256:c5bf59f8652bca806a54ea73e9567fbedb500fb5e90111d1a8c4fec774d9c557:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjllNzNjNzMzM2IzODYxY2Y4MTAxOGJmMGM2YjNkOGVhYmIwMTgzMzBkNzYwZDllMDkxZDYzOGUwOGVkODgyMGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJjODBmMjRkMDRlNzc4Zjk3M2ZkMDA2M2ExZGVjNTFiNDZiZTY1MWI1YzdjOGYxODhjMmRlYTc0ZGY2OWRkOTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQxN2Y1YmUxZGMyMTg1YzgyNmI1Yjk3OWY4ZjgwZjE4OTEyZGNiYTY5MTdmNzQxNzI2ZjJiZGY5OGY0ZDFiZmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZiNDkzYjJkNzRhZThkN2JmOTE4MTY2ODRmMTI3ZGE5YWJlNmU3YzM1YzIxODUyZmM0MjQ1NzE1MWQxNWViMDUifQ"
         },
         {
           "resource": "repo://src/docs.json#L160-L208",
@@ -261,10 +261,48 @@
           "version": "repo-lines-v1:sha256:c6f9b47fd287c9a1ab3b84d30dbc95d551c84f9f2c5675c230d61d5f95585ea9:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5NmRjNDgxNDlmNWE4M2QxZWQ2ZGJiMzliYmM3ZTJiOTAyYWEzZDM0ZDZiZDVhZTRiMjkxYjY4ZGYwY2E3OWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUzM2E2ZmNmMTRkYTg4ZDRhZDFiN2U4MTM5YmI5NGI0NjZmZWU1OGI1YTljN2VmNWU4ZDY3ZjQwZDI3YzcxODIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE2ZjdkMzdmYjI5NzM5OWZlYTJhNWNlZjFjYzQwMjhjODk5NzlhOTA1MGE5Mjg1NmYwZDk2ZTFjMThiYTE5YTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg1MzNmMDVhZDdlZWI0ODNlZGE4MWNiYWVkNWNiNzdmNGU4MjM1MGZmMWJlNGNjNGNiZDE5NTIyMTU2OTcwZjkifQ"
         }
       ]
+    },
+    {
+      "id": "claim_4b13d69da24b45888770bbc250835e45",
+      "statement": "Repository-wide rules require contributors changing tooling such as scripts, workflows, Make targets, PR checks, scheduled jobs, or skills to invoke the `docs-tooling-notion` procedure before handoff.",
+      "evidence": [
+        {
+          "resource": "repo://AGENTS.md#L53-L65",
+          "version": "repo-lines-v1:sha256:e6e1159cfd2d86373cacf54c0873fd54c57924f9c15761f15e789ad5221db4cf:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYyZWMzNzgxZGE4ZTcxYjJmODA4MjJiZDE4Y2Q3MDAzMWJiNWNmNTBlNzY1N2NkODg3MzM1YjZhNzgxZGMyZTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlhYmM4MzNiMWMwOTMzOTQ1MmI1NTE1ZmNmMmM0M2JlM2IwZjczYmJiYjgwODZhNjQ4MDMyMGY4ODZiM2ZmMjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRkZjEwNzE0ZTQxODQ2OWNiMzU5Y2Q2NWQ4ZTFhMjVhNmQ0ZTI4ZWQ4YmRjNDkxOGIzZWM0NDRhZTNmMzc1NjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZlYjBiYmI4MzcwNTUxZGE4NDE5ZDZmZWY4NWZlMDJkNmNmZTNkMTBmYjE0ZmUxMjBjNTk0Y2VjNDBkMTNhNzMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_335e077d11db4e849e7dcb1c7a177794",
+      "statement": "The preview workflow builds documentation only for internal pull requests, pushes a generated `build/` tree to a collision-resistant preview branch, requests a Mintlify preview, and comments its URL on the pull request; when the pull request closes, it deletes matching preview branches.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/create-preview-branch.yml#L134-L237",
+          "version": "repo-lines-v1:sha256:346c7367e2bb75cb6fe08275e105f04cb34ca31f94519a3cb170d0207218507b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTA0LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIwZDBjMzQ0NmU0YzhhMDczYTQxY2ZkYzgzMzExYThkMDVkZmE4Yzc4M2E1OGQ1OGM0NzFmMjdhOWExMzQ3NDg2IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJmZjhlNDgyYTlhMGQzMjExOWQyMTA1ZGJiNGE5ZTYyODZiM2Q0MjVhMWU2NmIxMjU3NDUzMDM5NmJjMzkzZDQ0IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJhMTc1NDVjMTJjNWQxMDNhNzFlYWU4MmMyMDJjMGQ3MGZiMTkwOWExZmQ5MjY3ODdkMDEwNzBhYTVlNDQwMDUzIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI4ZjQ2Mjc0MDA0OTdmMDQyZDJjNDc5OWE0ZjI4OWY1YTI3NWZiNmI3MWYzNzA0Zjc2Njg2OGI1MjlmNzAzODA5In0"
+        },
+        {
+          "resource": "repo://.github/workflows/create-preview-branch.yml#L20-L86",
+          "version": "repo-lines-v1:sha256:76150ca62e5374ff63fbbd3265f2ec5d1efad1ec13b80b3101949a9d5649172f:eyJzZWxlY3RlZExpbmVDb3VudCI6NjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRlZDFkNzQwZGZhMTgxMjM1MWM3Mjc1NjQ3NjM1OTNiNmJlNGIxYjQ5NWZjYmFkZjEwOTZjNTM0MDExMDRiMWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3YTYyNDA2ODc0NWNiMGM2Mzk5MjhiYmVjNTEyMTc1Y2RkMDRiMWU0YmNiY2MwY2UwYTc0Nzg1ZTMyMzhlNTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM3ZDY0Mjk4OTUyNDg2ODk2OWU2Y2ZhYjU1YWZhZjg1M2M4ZTYyZmQyNWUyMmU1OGY0ZDk0NGNhZTUxM2QzM2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA2ZjVhMWUxNDM4Mjk2ODgwZGIyNjBhNzkxMTE2ZDdkOTk5MjFjMWIwODhjYjZhNDMxNjNmODhhYWRkYjI2MWUifQ"
+        },
+        {
+          "resource": "repo://.github/workflows/create-preview-branch.yml#L240-L281",
+          "version": "repo-lines-v1:sha256:f1c1000a636c6875dadd0a79ee77c206273efaf48ff399febcf6ffce134ac022:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI0NDM2MDNkOWY2ODA5M2ZjZDllODg1ZWVhZWJhYWU1YzAyMDliMjI4MDcxZTNkNTNmNmNiMDgzN2Q4NTZhN2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAwYmRmOGMxYWEwMTk0YzM3NGYzODZiNWRlYmRjNjBkZTcyMmI4ZGIwNjIxOTZmYzEwNTEwMDUwN2ZkMjVhMjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMzMjg2MDJjZmIxOTEzMjVhMDhhYTNlYjhhOWIwMjg2NzMxYTRhMGM4NjU5YWI2ZWJmZTE4ZDdmZjMzMmE1NzMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImExNDliNjFhZGY5ODY3ZTQzMTUzNDVjZDYzOTkwMTk0NTRmNWFhZTgxODI5NWI3Yzc2Zjc1N2Q4NDQwMWNjMTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3d6d4a4b3d7b4638b840d0a5faa8a5a0",
+      "statement": "Mintlify generates configured OpenAPI endpoint pages at deployment time rather than in local `build/`; the committed LangSmith platform OpenAPI specification is refreshed daily by automation and must not be hand edited.",
+      "evidence": [
+        {
+          "resource": "repo://AGENTS.md#L234-L246",
+          "version": "repo-lines-v1:sha256:28d8b0f603db48ee3140d586c55f832ac2412a4dfa5ba76b13236e1038ccd409:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYwNmZhN2IwOTc1OWNiYzBhOGQ1NjBkYWViNjllN2U0YTljNWYyMDA1MGQyZWRmMjY5MjU5MmQxNzRmZGNhZDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIzYzcxNjhiNGVlMTlmNjZlZTY3ZTg1YmNmMWI1OTRkNjQyODg5NjAxZWJkYTAzNzg1M2E0ZTgxZTE3NWM5MDAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY0NzQ0YzdmNTQyYTFiNDJmYThlNTBhYmQ2OWRlZmM5ODhjZTYxMTRjZjUxMDA1NjEyOTIwMWZmMTJlYTQ0ZWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc3Zjg0MWY0OTE4ZWIzN2VjNDdlOTI0ZGFiMDU0YTkzZDlmOTY4N2JjZjFlNDEzYTkwZDllOGEwODI3NWJjYjQifQ"
+        }
+      ]
     }
   ],
   "verification": {
     "by": "openwiki/0.4.3",
-    "at": "2026-10-09T08:24:05.435Z"
+    "at": "2026-10-13T08:26:23.587Z"
   }
 }

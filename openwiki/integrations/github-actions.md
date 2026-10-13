@@ -1,11 +1,11 @@
 ---
-type: CI/CD trust model
+type: CI/CD trust and operations map
 title: GitHub Actions and CI/CD
-description: Maps repository validation, metadata-only pull-request automation, and trusted maintenance writers. Covers CI gates, code-sample tracing and refresh behavior, generated documentation, and scheduled maintenance.
-tags: [github-actions, ci-cd, automation, security, testing]
+description: Maps validation, preview deployment, metadata-only PR automation, credentialed sample testing, and trusted maintenance writers. Explains the trust boundary between untrusted revisions and the narrowly privileged workflows that mutate GitHub or external systems.
+tags: [github-actions, ci-cd, automation, security, testing, previews]
 verified:
   - by: openwiki/0.4.3
-    at: 2026-10-08T08:23:51.982Z
+    at: 2026-10-13T08:26:23.587Z
 sources:
   - id: openwiki-source-c4f328e2e1685f1c7e2bc076
     resource: repo://.github/OWNERS
@@ -19,6 +19,8 @@ sources:
     resource: repo://.github/workflows/_test.yml
   - id: openwiki-source-164e2da859b5277df81c7d94
     resource: repo://.github/workflows/ci.yml
+  - id: openwiki-source-7346220ed051a41471043c07
+    resource: repo://.github/workflows/create-preview-branch.yml
   - id: openwiki-source-1ca506cf29eca9b87a087220
     resource: repo://.github/workflows/external-integration-pr-comment.yml
   - id: openwiki-source-d11cee5031c401f0c9a33c44
@@ -47,24 +49,28 @@ sources:
     resource: repo://scripts/process_langsmith_openapi.py
   - id: openwiki-source-2b15ecffacad911ef9db112f
     resource: repo://scripts/test_code_samples.py
-generated: { by: "openwiki/0.4.3", at: "2026-10-08T08:23:51.982Z" }
+generated: { by: "openwiki/0.4.3", at: "2026-10-13T08:26:23.587Z" }
 ---
 
 ## Trust model
 
-The workflows use three deliberately separate contexts. Keep their boundaries intact.
+The workflows intentionally separate three execution models. The event name alone is not a safety guarantee: the permissions, checkout target, secret exposure, and whether the PR is internal determine what a job may safely do.
 
 | Context | Entrypoints | Permitted role | Safety boundary |
 | --- | --- | --- | --- |
-| Untrusted revision validation | `pull_request` | Check out and validate the proposed revision. | Do not depend on repository secrets or writes while handling fork code. |
-| Metadata-only PR automation | `pull_request_target` | Read base-branch policy and GitHub API metadata; label, comment, request review, or close. | Never check out, source, or execute fork-head code. Treat PR values and head-file bytes as data. |
+| Untrusted revision validation | `pull_request` | Check out and validate the proposed revision. | Do not rely on secrets or privileged writes when handling fork code. |
+| Internal-PR preview build | `pull_request` or manual dispatch in the repository | Build a revision, place only generated `build/` artifacts on a disposable branch, and request a Mintlify preview. | Never run this privileged branch-writing path for a fork PR; do not treat its preview branch as mergeable source. |
+| Metadata-only PR automation | `pull_request_target` | Read base-branch policy and GitHub API metadata; label, comment, request review, or close. | Never check out, source, or execute PR-head code. Treat PR fields and fetched head-file bytes as data. |
 | Trusted maintenance writer | Schedule or `workflow_dispatch` in the repository | Use narrowly granted credentials to generate a branch and review PR. | Preserve no-diff exits, limited paths, and review; package-download PRs are the explicit squash-auto-merge exception. |
 
 ```mermaid
 flowchart TD
   Pull["Pull request"] --> Validate["pull_request validation"]
-  Pull --> Metadata["pull_request_target metadata policy"]
+  Pull --> Preview["Internal PR preview path"]
+  Pull --> Metadata["pull_request_target metadata path"]
   Validate --> Checkout["Checkout proposed revision"]
+  Preview --> Build["Build documentation"]
+  Build --> Artifact["Disposable build artifact branch"]
   Metadata --> API["Base policy and GitHub API"]
   API --> Mutate["Label comment review or close"]
   Trigger["Schedule or manual dispatch"] --> Writer["Trusted generator"]
@@ -72,7 +78,35 @@ flowchart TD
   Diff -->|"yes"| Review["Automation review PR"]
 ```
 
-This separates execution of a proposed revision from privileged PR mutation. Do not convert `pull_request_target` into a fork-testing workaround: do not add a head checkout, run a PR file, or construct shell commands from untrusted title, body, branch, or issue-form values.
+This maps the distinct execution and mutation paths. In particular, do not convert `pull_request_target` into a fork-testing workaround: do not add a head checkout, run a PR file, or construct shell commands from untrusted title, body, branch, or issue-form values.
+
+## Preview branches for Mintlify
+
+`create-preview-branch.yml` is a `pull_request` workflow for opened, synchronized, reopened, and closed PRs, with manual dispatch also available. Its concurrency group cancels an older run for the same ref. The branch-writing `create-preview` job is eligible only for a same-repository PR that is not closed, or for manual dispatch; fork PRs do not receive this path. This distinction is important because the job checks out the requested source revision and is granted `contents: write` only to create its deployment input.
+
+The job validates that the source branch is at most 100 characters and contains only letters, digits, `.`, `/`, `_`, and `-`. It builds with `make install` and `make build`, then creates a collision-resistant name:
+
+```text
+preview-<first six alphanumeric source-branch characters>-<Unix timestamp>-<first seven source SHA characters>
+```
+
+It creates the new branch from that checked-out state, force-adds `build/`, and pushes it. The generated commit explicitly says that the branch contains built documentation for preview deployment and must not be merged to `main`. The branch is therefore a disposable built-artifact deployment input, not a review branch or source-of-truth change.
+
+```mermaid
+flowchart TD
+  Eligible["Internal PR or manual dispatch"] --> ValidateBranch["Validate source branch"]
+  ValidateBranch --> BuildDocs["make install then make build"]
+  BuildDocs --> Name["Create preview name"]
+  Name --> Push["Push branch with build artifacts"]
+  Push --> Deploy["Request Mintlify preview"]
+  Deploy --> Comment["Replace bot preview comment on PR"]
+  Closed["PR closed or merged"] --> Match["Find preview branches by source prefix"]
+  Match --> Delete["Delete only preview-prefixed branches"]
+```
+
+This is the preview lifecycle from build input to cleanup. Manual dispatch creates the branch but does not execute the PR-comment job. For an eligible PR, a separate job has only `pull-requests: write`; it uses the Mintlify API credentials to request the preview, removes prior bot preview comments identified by a marker or legacy text, and posts the new URL. It can include deep links for up to five largest changed routable Markdown files, excluding code-sample and snippet paths.
+
+On a closed or merged PR, the cleanup job alone receives `contents: write`. It derives the same six-character alphanumeric source prefix, finds remote branches matching `preview-<prefix>-*`, and refuses to delete any result that does not start with `preview-`. This makes previews ephemeral, although the prefix-based cleanup means preview branch naming and cleanup logic must be changed together.
 
 ## PR expectations and core CI
 
@@ -87,8 +121,8 @@ flowchart TD
   CI --> Links["Link and OpenAPI validation"]
   CI --> Static["Merge markers cross refs and docs URL checks"]
   CI --> Generated["Regenerate provider overview"]
-  Generated --> Match{"Committed result matches"}
-  Match -->|"no"| Fail["Fail CI"]
+  Generated --> MatchGenerated{"Committed result matches"}
+  MatchGenerated -->|"no"| Fail["Fail CI"]
 ```
 
 This is the CI fan-out; generated-output drift fails rather than being silently repaired in CI.
@@ -162,7 +196,7 @@ flowchart TD
   Refresh -->|"yes"| TracePR["Append to or open standing PR"]
   Refresh -->|"no"| Noop["No trace PR change"]
   Samples --> Final{"Any ordinary sample failures"}
-  Final -->|"yes"| Fail["Fail job after refresh attempt"]
+  Final -->|"yes"| FailSamples["Fail job after refresh attempt"]
 ```
 
 This full-run flow shows the partial-failure threshold and the independent final job result.
@@ -184,11 +218,12 @@ The daily LangSmith OpenAPI refresh reuses its standing branch and appends to an
 ## Safe-change checklist
 
 1. Keep `pull_request_target` metadata-only: never execute or check out fork-head code.
-2. Keep secret-backed code-sample execution off fork PRs; use ordinary validation for fork revisions.
-3. Preserve changed-path selection for internal sample PRs and full-run-only tracing; do not accidentally trace or write from untrusted PR execution.
-4. Preserve the fewer-than-20-failures and at-least-one-trace conditions before snippet regeneration, while retaining the final failure for ordinary sample failures.
-5. Preserve writer no-op behavior and narrow writes: trace and OpenAPI refreshes reuse standing review PRs, while package downloads cross a short-lived artifact boundary.
-6. Treat writer PRs as reviewable public-documentation changes even when generation succeeds.
+2. Keep the preview creator and secret-backed code-sample execution off fork PRs; preview branches are disposable built artifacts, never merge inputs.
+3. Preserve preview source-branch validation, the `preview-` naming/cleanup contract, job-scoped write permissions, and separate Mintlify comment permissions.
+4. Preserve changed-path selection for internal sample PRs and full-run-only tracing; do not accidentally trace or write from untrusted PR execution.
+5. Preserve the fewer-than-20-failures and at-least-one-trace conditions before snippet regeneration, while retaining the final failure for ordinary sample failures.
+6. Preserve writer no-op behavior and narrow writes: trace and OpenAPI refreshes reuse standing review PRs, while package downloads cross a short-lived artifact boundary.
+7. Treat writer PRs as reviewable public-documentation changes even when generation succeeds.
 
 ## Related pages
 
@@ -196,4 +231,5 @@ The daily LangSmith OpenAPI refresh reuses its standing branch and appends to an
 - [Quickstart](/openwiki/quickstart.md)
 - [Testing Overview](/openwiki/testing/test-overview.md)
 - [Code Sample Lifecycle](/openwiki/workflows/code-sample-lifecycle.md)
+- [Integration Listing Automation](/openwiki/workflows/integration-listing-automation.md)
 - [LangSmith Platform OpenAPI Refresh](/openwiki/workflows/langsmith-openapi-refresh.md)

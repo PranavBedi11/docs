@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:dc4a46e7764cfc3bcf04d55d1d339598ff85bfc2f31e51eb85cf883546477bd6",
+  "pageVersion": "sha256:a1fe0ab179c6161a7c624734f8cfb4c534923658b14e31c9983f8f28d9db9a56",
   "claims": [
     {
       "id": "claim_5a0048f3b3ca4390bc60a9abdcb5e5d2",
@@ -12,7 +12,7 @@
         },
         {
           "resource": "repo://src/docs.json",
-          "version": "repo-file-v1:sha256:154a20cadfa626ea4ecfb7fc1024b0439ea25c285d22f5cd222fa998d145a964"
+          "version": "repo-file-v1:sha256:49b0e6f15b129b7d91cc990277c4c690b80597c78631c8a6e87fb3eccdb06c72"
         }
       ]
     },
@@ -30,7 +30,7 @@
         },
         {
           "resource": "repo://src/docs.json",
-          "version": "repo-file-v1:sha256:154a20cadfa626ea4ecfb7fc1024b0439ea25c285d22f5cd222fa998d145a964"
+          "version": "repo-file-v1:sha256:49b0e6f15b129b7d91cc990277c4c690b80597c78631c8a6e87fb3eccdb06c72"
         }
       ]
     },
@@ -44,7 +44,7 @@
         },
         {
           "resource": "repo://src/docs.json",
-          "version": "repo-file-v1:sha256:154a20cadfa626ea4ecfb7fc1024b0439ea25c285d22f5cd222fa998d145a964"
+          "version": "repo-file-v1:sha256:49b0e6f15b129b7d91cc990277c4c690b80597c78631c8a6e87fb3eccdb06c72"
         }
       ]
     },
@@ -54,7 +54,7 @@
       "evidence": [
         {
           "resource": "repo://src/docs.json",
-          "version": "repo-file-v1:sha256:154a20cadfa626ea4ecfb7fc1024b0439ea25c285d22f5cd222fa998d145a964"
+          "version": "repo-file-v1:sha256:49b0e6f15b129b7d91cc990277c4c690b80597c78631c8a6e87fb3eccdb06c72"
         },
         {
           "resource": "repo://src/oss/python/integrations/chat/index.mdx",
@@ -76,15 +76,15 @@
         },
         {
           "resource": "repo://src/docs.json",
-          "version": "repo-file-v1:sha256:154a20cadfa626ea4ecfb7fc1024b0439ea25c285d22f5cd222fa998d145a964"
+          "version": "repo-file-v1:sha256:49b0e6f15b129b7d91cc990277c4c690b80597c78631c8a6e87fb3eccdb06c72"
         },
         {
           "resource": "repo://src/langsmith/application-structure.mdx",
-          "version": "repo-file-v1:sha256:98ee783d0194bdc27dc81c6ddb2fb1d015e68332ed035fa41174260a8e706048"
+          "version": "repo-file-v1:sha256:21c33db04236cbffbf35a69055f3c67b985cdaca7367eeef9325b84ce175c36a"
         },
         {
           "resource": "repo://src/langsmith/sandboxes.mdx",
-          "version": "repo-file-v1:sha256:8a7bbee79b8a9fc50d7128aa33158bc77be291ea2692dff7324ae9dd17b9ca34"
+          "version": "repo-file-v1:sha256:e7e4fa7c8c4245ad9e79acae9e1bb9df8ecabfa917330850681cb9d922a714b5"
         }
       ]
     },
@@ -98,7 +98,7 @@
         },
         {
           "resource": "repo://src/docs.json",
-          "version": "repo-file-v1:sha256:154a20cadfa626ea4ecfb7fc1024b0439ea25c285d22f5cd222fa998d145a964"
+          "version": "repo-file-v1:sha256:49b0e6f15b129b7d91cc990277c4c690b80597c78631c8a6e87fb3eccdb06c72"
         }
       ]
     },
@@ -122,7 +122,7 @@
       "evidence": [
         {
           "resource": "repo://src/docs.json",
-          "version": "repo-file-v1:sha256:154a20cadfa626ea4ecfb7fc1024b0439ea25c285d22f5cd222fa998d145a964"
+          "version": "repo-file-v1:sha256:49b0e6f15b129b7d91cc990277c4c690b80597c78631c8a6e87fb3eccdb06c72"
         }
       ]
     },
@@ -176,7 +176,7 @@
         },
         {
           "resource": "repo://src/docs.json",
-          "version": "repo-file-v1:sha256:154a20cadfa626ea4ecfb7fc1024b0439ea25c285d22f5cd222fa998d145a964"
+          "version": "repo-file-v1:sha256:49b0e6f15b129b7d91cc990277c4c690b80597c78631c8a6e87fb3eccdb06c72"
         },
         {
           "resource": "repo://src/oss/javascript/migrate/langchain-mcp-adapters.mdx",
@@ -198,7 +198,7 @@
         },
         {
           "resource": "repo://src/docs.json",
-          "version": "repo-file-v1:sha256:154a20cadfa626ea4ecfb7fc1024b0439ea25c285d22f5cd222fa998d145a964"
+          "version": "repo-file-v1:sha256:49b0e6f15b129b7d91cc990277c4c690b80597c78631c8a6e87fb3eccdb06c72"
         },
         {
           "resource": "repo://src/langsmith/agents.mdx",
@@ -226,7 +226,7 @@
       "evidence": [
         {
           "resource": "repo://src/docs.json",
-          "version": "repo-file-v1:sha256:154a20cadfa626ea4ecfb7fc1024b0439ea25c285d22f5cd222fa998d145a964"
+          "version": "repo-file-v1:sha256:49b0e6f15b129b7d91cc990277c4c690b80597c78631c8a6e87fb3eccdb06c72"
         }
       ]
     },
@@ -260,7 +260,7 @@
       "evidence": [
         {
           "resource": "repo://src/docs.json",
-          "version": "repo-file-v1:sha256:154a20cadfa626ea4ecfb7fc1024b0439ea25c285d22f5cd222fa998d145a964"
+          "version": "repo-file-v1:sha256:49b0e6f15b129b7d91cc990277c4c690b80597c78631c8a6e87fb3eccdb06c72"
         },
         {
           "resource": "repo://src/oss/deepagents/code/remote-sandboxes.mdx",
@@ -274,7 +274,7 @@
       "evidence": [
         {
           "resource": "repo://src/langsmith/self-host-sandbox-architecture.mdx",
-          "version": "repo-file-v1:sha256:350bf0b95fc5bbbda304d1e2b59ef7cb316d248106c8cfecaf9d11c5888ba22f"
+          "version": "repo-file-v1:sha256:687a3f112e5e5f025ac153f7a8237cae5c9ff78fe110878b747adcc3f8fce189"
         }
       ]
     },
@@ -367,10 +367,46 @@
           "version": "repo-lines-v1:sha256:3d1fac25f9a52d4fb09b428461adfea8ab8ee8383ff2cc96eee2c4b2aab6fc5f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIzMjAxMzQ5MWFhYWY2NDg1NGFjNzE3N2Q2NzhmN2RhYTk0OTg4NDBmZDE5ZmUzZmZkNmI1MDhkZmY4MzNhMzYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUzZTdjM2RhZGMxNDQzMDVjNDE5ZTcyNDBmYjA0MTY3NmM4MjcyMmQwMDE2Y2I3ODA4NDVhNzg1ZTExYzQzM2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjExNzNmYjBlNmI3NmEyN2MzZDBjYWU0ZDU3NTk1MTY3ZTQ2ZjdiOWEyNDRhOGViN2FkNWM1ODQwMTAwYjk0YzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEzZWE4NmZjZTQ4YzE4MjIyOGM0MTUzYTE2ZWVjY2VlMmMxMDBiMjg0YmM2NGFmNzU2OTliOTc0NDI3YWI4NDkifQ"
         }
       ]
+    },
+    {
+      "id": "claim_1ff9418ae1c54c44b88fd26e967b87d7",
+      "statement": "A LangSmith Agent Server application supplies graph definitions, `langgraph.json`, dependency information, and optional environment variables; multiple named graphs in one configuration share the deployment image, dependencies, and environment, and each receives a default assistant selected by graph ID.",
+      "evidence": [
+        {
+          "resource": "repo://src/langsmith/application-structure.mdx#L150-L171",
+          "version": "repo-lines-v1:sha256:3b016e500c3a4d504e673ef9f784f22e72afe03427bdccd4ed2dabfd47f74fa5:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkOTI3ZGEzNjE3N2I4NTMxZGYwNmM5NTEwNDhhMmRjNWYzN2ZhNzdlNTc4YjE2MWNjNGYwN2E3OTUzZmQzOGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNlM2Q1MzNhNmVlYWU1MzNkYzFiOGIzZDg2NzBiMmFhOGExZDAwZGMwMzQwM2U5NjMxMzg1NTNmNTY0ZTU1ZWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE0ZWRiY2VmMWYzNzA5Y2Q0OGRhNTI3ZjlhYjM5NTIzYThjODExNGFmY2NlMzM2ODUxMDk1NzU2NWMwYmQ0ZGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNhMTVhN2FhNTIyN2I3NmM2ZWNkMjNmM2RiNDM2ODJmNmI2NjJkZjFkNmQ5ZGVlNTRlY2ZlNGFlY2Q4ODMzNjMifQ"
+        },
+        {
+          "resource": "repo://src/langsmith/application-structure.mdx#L8-L19",
+          "version": "repo-lines-v1:sha256:b9531df61df51d595b457f9a40832054b10622727c5354ce2775f297fb27e9e3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ1M2IzOTA5YzlhMzY1ZTk0MjM5OTgzNzQwMGQ4YmJjOWE0ZGMzNTEyOTk4OGRhNmY4YmQ5YTQwMWQ3MmNjNjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2NzQzN2U2MTBmNjgyZGU5MmYwYjBmNzE5MzVlMzE4YTY4MjRhNDNkZDk2MmFhMTkwZjJmNGY1ZDdiYTM0MjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU3NjQyNzAyOTYyYTIzYjc0MDQ4MDc0Nzc0MTRkODk1NmNlM2YyYTE5MGY1ZjljMjA0NjE1MDY4NGU1N2NmMzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU2ODEyM2JhMDUyZjI5YTMxMjdmZjhmMDQzZmZhYzMyMDBiZDc0OWExNGM4MTZmYjJmNjJkZjUwZjYyZjA2MGYifQ"
+        },
+        {
+          "resource": "repo://src/langsmith/application-structure.mdx#L86-L92",
+          "version": "repo-lines-v1:sha256:742718a2eac0dc4aa701e9d6a51cc89e089d4752ec945516255125f1909e6983:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjEzMTMxM2ZhZmJkYzE1OWUyN2ZhMjg4ZmFmYmJhOTY2MzdjYjUwNmZhOTJmOTZjYTk0NGMyNzllNmQ5NGEzZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzY1OTNlYTdlNDI0YjIwYTJhN2I5NTg0ZmVkZjlmNjkzYWY1MjQ0MjQ5YmNlY2M3YmYyNWIxYmRhNWM1OGYyZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDk3NzkxZTUzMjgwOWM3M2ZjZThlZWVmYzQzMDE3MGY1ZmViZjI0OTVhMzQwNTdiNzdkNGEzMjIwNjJmZWEzZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzdjN2U4NTI1Nzc2YmFkMDIzZTIwOTlmNDdlMzcxNjA1MzU3MzgxZTE5NjMxMGU0NjNkNTlmOTJhODJmYTAyZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_515d6eda04b340b0a6cd5c158a75e77e",
+      "statement": "For self-hosted Sandboxes, a graceful host drain saves persistent VM memory and leaves sandboxes stopped until a start or wake request, whereas host loss loses running memory and requires fencing before disk-based recovery; JuiceFS metadata and object storage must both be protected because object storage alone cannot reconstruct the filesystem.",
+      "evidence": [
+        {
+          "resource": "repo://src/langsmith/self-host-sandbox-architecture.mdx#L106-L148",
+          "version": "repo-lines-v1:sha256:537ade31c4de12a1699a763ef7b9c15cbb7fdfbff09176aa2d8c4a70f41dbad5:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5OGVkZGMyZDk1ZTNhYjdhOTdkOWJlNmU3ZmNmMmM5YmJjNGVkNTVhN2ZhNmYwNzI2ODgzMmNjMTJmZDMwMDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhYTYwNjg4YTk0ZmNmNjEzNTdiNmIzMmVkMGJkMWVkYzA1ZjVmNThjYzczM2ZlNDk1ODFlZmZlZjgyNzM3NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ3MjVkNjk2MDczNThlOGMyMTAzMTNhNTk3OGQzZDEzMjNmMjJmOWIxODllYjE3NGJmOGE5Y2JkNWMxNzM5NGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY0MmUwMTE5NDYwZWRlMzM1NGExNmI4ODg4YjQ3MDVjMGZkNzkxOWEwMTYxYzdlNGYzOGE3ZjBmOGFiNmM0MzEifQ"
+        },
+        {
+          "resource": "repo://src/langsmith/self-host-sandbox-operations.mdx#L120-L148",
+          "version": "repo-lines-v1:sha256:b719b70a57de5b107bae362a02ac7349e8f22343d1eb90ee014813b6b1b8eb07:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5Y2U1YzFiMWQxZWVkMTQyM2RjMmJlMmE5YzQxZWQwYjYzYmMyZmJhYTgwYTBmNjM5OTRkZDgyYThjNTE5NjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQwYTVjZGQ5MTZlYzFmODIzOTIzZWRmMjQzYzFkMTZhYjYyOWE1NTQ2NzQwNTZhZmI2ZTRmZWMxMzNkZTdhZjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk1MzU4YjNhZDJlZmZiOTQyODAxMmU0ODBiMjNlY2MyYTE4OTA5MTE5MzkwMzUwYjhhYmEyMjllNTI5Yjc5OWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUxZDM3MDRlM2ZhOGUzMmYxZjYxMzg5OTExODhmYTg0MjU1ZTg2Yjk1NWZiMWJiNTU4MDViODI0OTA4NjY2MWYifQ"
+        },
+        {
+          "resource": "repo://src/langsmith/self-host-sandbox-operations.mdx#L31-L60",
+          "version": "repo-lines-v1:sha256:d5b0d49fb30f380c6e39c491d5889c28fd8f3f03426834cfc4d9faebfb717a8c:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjllZjZlNDE4MmJjM2Q3Y2QwZjVjN2M3ODM0NDRmNDgzNGQzNWY1YjBlODExYjdlNWEwNTEwYzRiMzQ2YzAzOGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRkNDc0ZWE3MDU1ZGY0NjhlMzMwYTFhNzYxNWVjNmNlMGJjNjBjMGI1NDllNzEwNjYwZGUyZjljYWI3ZTZhNzIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBjNDk0MjBkODAwMDgzMTZiY2EwZmZhYjBjZTdkOTI0ZmMwODg4YWMwYjc4ZGJkMDE0M2NmMzdiYmY3ZTcyMGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRiNDVkZmJhOGE1ODY1MzlmYjE1ZjRmOTRlMjdjYTE3MTMyMzQzNGY0OWM1YmU3MjMwOGNmMGQ4MDk5ZTEwYjUifQ"
+        }
+      ]
     }
   ],
   "verification": {
     "by": "openwiki/0.4.3",
-    "at": "2026-10-09T08:24:05.435Z"
+    "at": "2026-10-13T08:26:23.587Z"
   }
 }

@@ -1,14 +1,18 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:9e00b91614be32abe7bec8af09fd9d24411d30273b84034ce352c83755cb48f4",
+  "pageVersion": "sha256:a6dba7448fcaa4cb21584529881aa2e05491a4c1c92a69c26820ca8e63b9828d",
   "claims": [
     {
       "id": "claim_568d51d4554d4e1fab893546284d5735",
-      "statement": "The weekly Cloud/Fleet assembler reads top-level YAML fragments from the sibling `langchainplus/.changelog` checkout, renders a Mintlify `<Update>` block for `src/langsmith/changelog.mdx`, and is used by a weekly agent to prepare a docs PR for human approval.",
+      "statement": "The weekly assembler reads top-level YAML fragments from the sibling `langchainplus/.changelog` checkout, renders a Cloud-formatted Mintlify `<Update>` block for `src/langsmith/changelog.mdx`, and is used by a weekly agent to prepare a docs PR for human approval.",
       "evidence": [
         {
           "resource": "repo://scripts/assemble_changelog.py#L1-L11",
           "version": "repo-lines-v1:sha256:e420079649aebca1a542eb307029fe36dcb8a9b75e91216beeaddb19f91d65e4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ2ODJjYmRiNGM4YjA3NTE4YmY0ODZjNTg5OTBmYzM5MTc4M2FhMjBhOTE2YmZiMjdhZDIxMWViMWQ1YzM2NDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNiMzFlYThkMzM2NzM3Y2U3ZWQ5YmVjYWIwMmE4OTE2OTFiYWU3YzIyNDU1ZWRmZWE4MjE1MDFkNjFlNThjYTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFiNmNkMTc4NTg3ZTkwMTAyNWIzYmZmYzIxNDg0MDdmYWI5NjNhYTRjZmY0OGVmYzczNDQ1ZmYwNjQ5ZjliYTQifQ"
+        },
+        {
+          "resource": "repo://scripts/assemble_changelog.py#L310-L354",
+          "version": "repo-lines-v1:sha256:4729ed598fcb73f2d67eb4879a3880674eeb82635a1ae88f3221d3ae35b03a9b:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjczZjgwNzk2Y2QyYmMyYzlmN2ZlMjJjMzYyNTAwODBmMTEzZDQ1ZTQyZWZhZWU1Nzc5YWNmOWQ2MDc0OWRmM2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEzZTdiYjMxNTZkZjFmNzcyOGY0NTMxOTM0NDlhYTc0NmQ3MWE1NDEzYTQ0M2FjZGVkMTZkYzcwNTI2Nzg0ODEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQzZTI5ZTZmMTc2MzI5ZDNlNWQzMzE2MWE5YWQ0ZGI3OTcyOGU1MWQ4NmFiNjk5NDcwYWY1MWFlYzAzYzkzOTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk1MGM3MGZkNjQ1YTUyZmIzYjNiMmRmZDMyNTg1MGQ4M2QwYzc0YmIzMGMxM2E1NWUxN2NhODFjY2I3NmY1MGQifQ"
         },
         {
           "resource": "repo://scripts/assemble_changelog.py#L51-L56",
@@ -130,21 +134,29 @@
     },
     {
       "id": "claim_723d6c53194e418ab134bdbd79570ae8",
-      "statement": "Cloud/Fleet changelog content is organized as weekly `<Update>` blocks in `src/langsmith/changelog.mdx`, whereas self-hosted content is an independently authored stream of versioned, tagged release `<Update>` blocks with Helm-chart download links.",
+      "statement": "Cloud weekly `<Update>` blocks are authored in `src/langsmith/changelog.mdx`; the Fleet route instead imports `FleetChangelog` from `src/snippets/langsmith/fleet-changelog.mdx`; and self-hosted content is an independently authored stream of versioned, tagged release `<Update>` blocks with Helm-chart download links.",
       "evidence": [
         {
-          "resource": "repo://src/langsmith/changelog.mdx#L8-L21",
-          "version": "repo-lines-v1:sha256:1dcd9dc009acac453b7820175a34404cdbac7eafbb5ef6b8bd200ab40514b45b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMwNzVlYjZmN2QzM2RhNmE4ZDE1NzJmZDljMmM5MDAwMjk3NGY3NWVjYjU4MzY5MGJlZWVjMTBhM2JlYzVjYTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZlMjcxMDU2MTI5ZmVkZWE0YTYxMTlkMGM4NTZlY2U5MzZmNTczMzhkNWI0MDg5NTRiZjlmMDk1YjM5NzIyZjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFkNDI1ZTYyYjFjNzBhNTBiYzJlZWM0YzQyZmYwMjg1ODY2ZmE5NWE2ZWQzNmUzMDBkZDBjNGQyMzAxYTBiODciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFjYmUyN2ZiMTE3M2NjYjUyMTk3MTVhNmJjYThlZTJlNDcxYjNhNDg3OGQwMTFkYzZhMzJjOGEzN2ZmZDFjZjYifQ"
+          "resource": "repo://src/langsmith/changelog.mdx#L8-L24",
+          "version": "repo-lines-v1:sha256:393c708a24e05331103c4071906ff79a774d345fb494aa195721d7aed99552fe:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMxMDUxYzRkZWYyNzJkMzhiMGEzNTM5YzVlNTdjZjQ5MWNmNmNkNzkyZmYzNDRlMTVjMzkzMGIzYzc2ZTE1MTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI5YjFlYTY0NWQ3MDVkMGUwMGJjZGQ3ZDg1ZGY3NjM0M2Q5YzdjMmI1NTU2MjcyNjUxNTZjOWZhOWI1OGI5NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFkNDI1ZTYyYjFjNzBhNTBiYzJlZWM0YzQyZmYwMjg1ODY2ZmE5NWE2ZWQzNmUzMDBkZDBjNGQyMzAxYTBiODciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMyMzg2OGE0ZGVlMzcxYTg0N2RiNjczMzVmOWU1NGZhMmMxNjc2YmU2YzQzMDMyM2YyODNhOTNhOTJkOWY1YTYifQ"
+        },
+        {
+          "resource": "repo://src/langsmith/fleet/changelog.mdx#L9-L17",
+          "version": "repo-lines-v1:sha256:91c7391ad0b9aa7bd24ebbdbf8be2cea5eedd57b2232a31263675cd0d24d7430:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2RjOGNjNTA2MzM5YzYyMWQyMmQ1YTRjY2MyNzZiNTkxOTJmMjY2ZDg4Nzc5YjU3MzdkY2M2ZjNmYmI5MDA4MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDNmOTNlMGRkNDk3ZDYxY2FhZjA0YjFmNzUzOTVhYzAyYzI0ZDZkZmQ0OTBjNWZiZWExNGE5ZmE3ZWI1NWVhMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWQ0MjVlNjJiMWM3MGE1MGJjMmVlYzRjNDJmZjAyODU4NjZmYTk1YTZlZDM2ZTMwMGRkMGM0ZDIzMDFhMGI4NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
         },
         {
           "resource": "repo://src/langsmith/self-hosted-changelog.mdx#L13-L72",
-          "version": "repo-lines-v1:sha256:94b33f29ae49161b3029332a8d5721bff4ae349d754175e3fc2d5e4cbf82dbd0:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU1ODU3YjdiNjc3NTZmOGEwMmZlNmQzZmZmMTgzZmI3NmMyMjYzY2RkMTE4ODA2OTEzYmNhODE3MzExNjQyNTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyOTBiMTgzOGY4OTk4MDc2ZTgxMjhmOWNlZjY3N2EzY2JjMDE4MmE5YmIxODA4ZWQ1YWJjNTU4ZGI0Mzc3ODEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNkNTVjNDEzZWYzMWQ4N2EyOGI3NjgxNTk1N2Y5NGZkY2M0OTQyYTY5ZDUwOWRkYjZjYTY2MGE4ZGNmMjE3ODYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZmYmIzYmUwMGFiYzFjM2QzZjI0OTA2OTgwNWY4MmQ3Yjk4YjZlNTE3NTU4ZGViMjdlZDg2YzE1N2Q0ZjU4OWYifQ"
+          "version": "repo-lines-v1:sha256:94b33f29ae49161b3029332a8d5721bff4ae349d754175e3fc2d5e4cbf82dbd0:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU1ODU3YjdiNjc3NTZmOGEwMmZlNmQzZmZmMTgzZmI3NmMyMjYzY2RkMTE4ODA2OTEzYmNhODE3MzExNjQyNTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyOTBiMTgzOGY4OTk4MDc2ZTgxMjhmOWNlZjY3N2EzY2JjMDE4MmE5YmIxODA4ZWQ1YWJjNTU4ZGI0Mzc3ODEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE3YTU1NzkwYjQ0Y2YyOTAxYjc2MzI4MDY4ZTNhYWQ3YWFiOGEwMzBhMDkxMzYwOWNmODBhZTk4ZTFhOWUyNjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZmYmIzYmUwMGFiYzFjM2QzZjI0OTA2OTgwNWY4MmQ3Yjk4YjZlNTE3NTU4ZGViMjdlZDg2YzE1N2Q0ZjU4OWYifQ"
+        },
+        {
+          "resource": "repo://src/snippets/langsmith/fleet-changelog.mdx#L1-L10",
+          "version": "repo-lines-v1:sha256:02ec0e08635f6315efc27d081a5100dcbf8714835faa627c9707c7653586fd63:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkxZmU2ZDBlYzU5NTBmZjU3OGU2MzhkN2NkODkyNWU1NWJjMGM5OTM4NmJiMmU3NTU5OTZmYTI4M2E2NGI4MGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyOTBiMTgzOGY4OTk4MDc2ZTgxMjhmOWNlZjY3N2EzY2JjMDE4MmE5YmIxODA4ZWQ1YWJjNTU4ZGI0Mzc3ODEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNhNzc2ZTVkOGIzNTI0NjkzMGNlYTk2YzkzYjY5MmZmZTg4Y2M2NjM4ZTRjMTlmMDg1MjM4ZjhjMDMzOWRlNmYifQ"
         }
       ]
     },
     {
       "id": "claim_adbce835e79b44299c5cc9e2a7169b84",
-      "statement": "The self-hosted navigation script activates only at `/langsmith/self-hosted-changelog`, indexes visible H2 IDs matching exactly stable minor-release form `langsmith-<major>-<minor>-0`, creates inline and optional sidebar indexes, and removes generated indexes and heading classes when leaving the route or when no eligible headings remain.",
+      "statement": "The self-hosted navigation script activates only at `/langsmith/self-hosted-changelog`, indexes visible H2 IDs matching exactly stable minor-release form `langsmith-<major>-<minor>-0`, creates inline and optional sidebar indexes, removes indexes when no eligible headings remain, and removes generated indexes and heading classes when leaving the route.",
       "evidence": [
         {
           "resource": "repo://src/changelog-navigation.js#L1-L65",
@@ -255,6 +267,6 @@
   ],
   "verification": {
     "by": "openwiki/0.4.3",
-    "at": "2026-10-08T08:23:51.982Z"
+    "at": "2026-10-13T08:26:23.587Z"
   }
 }

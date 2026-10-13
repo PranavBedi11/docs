@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:58ea8133fe735b46b40cc5604c52de2f417d5e7c2ab301bf2123ecaa3627ff2e",
+  "pageVersion": "sha256:b78396ffef373c32309a9522921d89571539109a2c646c9c2b2e057d2ec259cf",
   "claims": [
     {
       "id": "claim_932f3ab25fad4bad942b43f94721d102",
@@ -365,10 +365,20 @@
           "version": "repo-lines-v1:sha256:897e6e59f26878821734a0348e22170a24b40122d4c3f6f35d23101ca5e1154f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTI3LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI2YWFlZjI2MDkwYzFiZjc1YjVlOWVjNzRmOWYyNmE0NmE3NmIzMDVlNmU0NmEwNjJlODI1MzMyODhlYTdhOTBlIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJiMDI1YmQ3Mjk1YzdjZTFmYzkyYzZlYTk0YjExYzk2OTE1MjRkMjRjZTBjNTI5ODg1ZWYzMTFlZjBiOGVmMDgwIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
         }
       ]
+    },
+    {
+      "id": "claim_68c27a81e4ee479186738fd07b7f3b2d",
+      "statement": "For each language and component with rows, the refresh generator writes an all-rows snippet; it also writes a featured snippet for chat even when no rows are featured, and for other components only when featured rows exist.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/refresh_integration_downloads.py#L817-L844",
+          "version": "repo-lines-v1:sha256:8279e884aa09d211a5528766add40f276f6557c442aab35d0987fa0ab3a78966:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRiZDJiZGUyOGE2ZTVlYThjNGVlYmFhODg3YTZiNjZmOWU2MGJhODRkNWU3NGFlMGU1NjIyMmU0ZTc5NGY4ZTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ0YjFkNjQ2MjVjMDNmMGUxZTIxNDNjNDEzOWM5NzhkMjM4MThmMWIwNTYyMzg1M2YwY2VhMDM0M2QwNWIxYzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjYzg4Zjc0YzAxMjRlNDU0OWM4YjczYTc2MGQ4YWMxZjFiMDE3MzRiZDBlMTlkYjVkNzhmZmJmNjg5MjZhYzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI4ZDVlOGQ4NTEzMmUwOWFjNzVjN2IzNjIwM2VmMTQ4MDhlMzk3MDQ3NmNiZDNjMmQ2ZDBkMzRkNWM0M2VjODIifQ"
+        }
+      ]
     }
   ],
   "verification": {
     "by": "openwiki/0.4.3",
-    "at": "2026-10-07T08:23:22.147Z"
+    "at": "2026-10-13T08:26:23.587Z"
   }
 }

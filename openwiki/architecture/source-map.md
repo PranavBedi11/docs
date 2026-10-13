@@ -5,7 +5,7 @@ description: Maps authored documentation and configuration to emitted routes, ex
 tags: [documentation, routing, navigation, mintlify]
 verified:
   - by: openwiki/0.4.3
-    at: 2026-10-09T08:24:05.435Z
+    at: 2026-10-13T08:26:23.587Z
 sources:
   - id: openwiki-source-5153f86e64d6ee0b305f72b3
     resource: repo://.github/workflows/refresh-langsmith-openapi.yml
@@ -41,6 +41,8 @@ sources:
     resource: repo://src/langsmith/sandboxes.mdx
   - id: openwiki-source-dc010f4c5f7e636c2056fa1d
     resource: repo://src/langsmith/self-host-sandbox-architecture.mdx
+  - id: openwiki-source-43341ac50e687e52975f8c00
+    resource: repo://src/langsmith/self-host-sandbox-operations.mdx
   - id: openwiki-source-3e471962a1ecd6495d5d8fdd
     resource: repo://src/langsmith/self-host-smithdb-features.mdx
   - id: openwiki-source-c52470905e74b4e82e1c1ae5
@@ -65,7 +67,7 @@ sources:
     resource: repo://src/oss/python/integrations/document_loaders/index.mdx
   - id: openwiki-source-24e5f74f0f40e9bfd381871f
     resource: repo://tests/unit_tests/test_builder.py
-generated: { by: "openwiki/0.4.3", at: "2026-10-09T08:24:05.435Z" }
+generated: { by: "openwiki/0.4.3", at: "2026-10-13T08:26:23.587Z" }
 ---
 
 `src/` is authored input, not the published site hierarchy. Keep these ownership planes separate:
@@ -151,7 +153,13 @@ The standard gateway authenticates and authorizes the caller, resolves the route
 - **LangSmith Sandboxes** are isolated managed resources for risky code and filesystem work. The landing page owns user-facing SDK, CLI, snapshots, service URLs, auth proxy, mounts, permissions, and availability guidance. Restricted-egress sandboxes cannot evade the managed destination allowlist through local proxy settings.
 - **Managed Deep Agents sandboxes** are a deployment-owned integration with LangSmith Sandboxes. The `sandbox/` declaration enables the capability, and reuse is one sandbox per durable thread.
 - **Deep Agents Code remote sandboxes** keep the local `dcode` LLM loop, memory, and tool dispatch local while filesystem and command calls run in the remote sandbox. That is not Managed Deep Agents hosting.
-- **Self-hosted Sandboxes** are an infrastructure cluster: `sandbox-host` pods manage Firecracker microVMs on dedicated KVM-capable nodes, while shared storage holds persistent state independently of a node. A rolling host restart is not live migration; clients must tolerate interruption and reconnection.
+- **Self-hosted Sandboxes** are an infrastructure cluster: `sandbox-host` pods manage Firecracker microVMs on dedicated KVM-capable nodes, while shared storage holds persistent state independently of a node. A rolling host restart is not live migration; clients must tolerate interruption and reconnection. A graceful drain saves persistent VM memory and leaves sandboxes stopped until a start or wake request; host loss instead loses running memory, waits for fencing, and recovers from persisted disk. Protect JuiceFS metadata and object storage together: object storage alone cannot reconstruct the filesystem.
+
+### Agent Server application structure
+
+`langsmith/application-structure.mdx` documents the application contract for Agent Server rather than a separate route-emission family. A deployable application supplies one or more graphs, `langgraph.json`, a dependency definition, and optionally `.env`. The configuration identifies dependencies, graph entry points, and environment settings. One configuration can expose multiple named graphs in a single deployment; they share its image, dependencies, and environment, and Agent Server creates a default assistant for each graph, selected by its graph ID.
+
+This is distinct from the **control/data-plane** operational model below: application authors own the project layout and graph declarations, while deployment infrastructure owns the desired-state and reconciliation path.
 
 ### Managed Deep Agents
 

@@ -1,11 +1,8 @@
 ---
 type: publication workflow
 title: LangSmith Changelog Publication
-description: Assemble reviewable weekly LangSmith Cloud and Fleet changelog updates from sibling-repository fragments while using rollout and publication-state safeguards. Also describes the independent self-hosted release changelog structure and navigation enhancement.
+description: Assemble reviewable weekly LangSmith Cloud changelog updates from sibling-repository fragments with rollout and publication-state safeguards. Documents the separate Fleet snippet and independently authored self-hosted release-note workflow and navigation.
 tags: [langsmith, changelog, publication, documentation, release-management]
-verified:
-  - by: openwiki/0.4.3
-    at: 2026-10-08T08:23:51.982Z
 sources:
   - id: openwiki-source-14b8a828704ca0a8d2ae4067
     resource: repo://scripts/.changelog_published.txt
@@ -17,27 +14,35 @@ sources:
     resource: repo://src/changelog-navigation.js
   - id: openwiki-source-d5e03d3b71d4904429831f94
     resource: repo://src/langsmith/changelog.mdx
+  - id: openwiki-source-29ed569b5f72fcd9fc4c8022
+    resource: repo://src/langsmith/fleet/changelog.mdx
   - id: openwiki-source-29fbe7359daff35ebb1492a3
     resource: repo://src/langsmith/self-hosted-changelog.mdx
+  - id: openwiki-source-1984497c709f6c418d98cebb
+    resource: repo://src/snippets/langsmith/fleet-changelog.mdx
   - id: openwiki-source-554339f52225d7d8edff3ed0
     resource: repo://src/style.css
   - id: openwiki-source-5d310b0d0e3f7a2baf5a473a
     resource: repo://tests/changelog-navigation.test.js
   - id: openwiki-source-2c73e322d3e9ba3868329a78
     resource: repo://tests/unit_tests/test_assemble_changelog.py
-generated: { by: "openwiki/0.4.3", at: "2026-10-08T08:23:51.982Z" }
+generated: { by: "openwiki/0.4.3", at: "2026-10-13T08:26:23.587Z" }
+verified:
+  - by: openwiki/0.4.3
+    at: 2026-10-13T08:26:23.587Z
 ---
 
 # LangSmith Changelog Publication
 
-LangSmith has two intentionally separate changelog paths:
+LangSmith has three separate publication surfaces:
 
-- `src/langsmith/changelog.mdx` is the weekly Cloud and Fleet stream. `scripts/assemble_changelog.py` turns per-PR YAML fragments from the sibling `langchainplus` checkout into a paste-ready `<Update>` block.
+- `src/langsmith/changelog.mdx` is the weekly **Cloud** stream. `scripts/assemble_changelog.py` turns per-PR YAML fragments from the sibling `langchainplus` checkout into a paste-ready Cloud `<Update>` block.
+- `src/langsmith/fleet/changelog.mdx` is the **Fleet** page shell; it renders the independently maintained `src/snippets/langsmith/fleet-changelog.mdx` snippet. It is not the assembler's output file.
 - `src/langsmith/self-hosted-changelog.mdx` is an independently authored release-note stream for self-hosted Helm charts. Its browser enhancement builds navigation only; it neither assembles nor changes release-note content.
 
 The assembler is a **curation aid, not an autonomous publisher**. It prints MDX on standard output and reports on standard error. The weekly changelog agent runs it on Fleet, reviews the candidate, and opens a documentation PR for human approval. The agent, the sibling checkout, and the Eppo credential are outside this repository's publication authority.
 
-## Cloud and Fleet weekly assembly
+## Cloud weekly assembly
 
 ### Inputs, ownership, and durable state
 
@@ -62,7 +67,7 @@ flowchart TD
   Record --> Commit["Write sorted ledger and commit together"]
 ```
 
-This is the Cloud/Fleet publication lifecycle. Printing a block, pasting it, opening a PR, and merging remain human-controlled steps; `--record` only advances the local duplicate-prevention record for fragments rendered in that invocation.
+This is the Cloud publication lifecycle. Printing a block, pasting it, opening a PR, and merging remain human-controlled steps; `--record` only advances the local duplicate-prevention record for fragments rendered in that invocation. The script always formats the RSS title as `LangSmith Cloud update` and its source instructions name `src/langsmith/changelog.mdx` as the paste target. Do not treat a category-map product value or a Fleet-hosted agent as a routing mechanism to the Fleet page.
 
 A valid fragment has a nonempty `title`, `body`, and `components`, plus `status: ready` or `status: held`; held entries also require `flag`. Invalid fragments are reported and excluded. After ledger filtering, the first fragment component that appears in the category map selects its section and optional group. Unmapped entries go in `Other`; sections preserve map order and ungrouped bullets precede named groups.
 
@@ -92,7 +97,7 @@ uv run python scripts/assemble_changelog.py
 uv run python scripts/assemble_changelog.py --week-label "June 15-19, 2026"
 ```
 
-Review rendered wording, grouping, and links, together with `HELD`, `ERROR`, `INVALID`, and already-published reports on stderr. Paste the reviewed block into the Cloud tab in `src/langsmith/changelog.mdx`; no assembler mode performs that edit.
+Review rendered wording, grouping, and links, together with `HELD`, `ERROR`, `INVALID`, and already-published reports on stderr. Paste the reviewed block into the Cloud page in `src/langsmith/changelog.mdx`; no assembler mode performs that edit.
 
 Only after the exact block is ready for the documentation PR, record the rendered filenames and commit the ledger edit in the **same** PR:
 
@@ -115,9 +120,11 @@ uv run python scripts/assemble_changelog.py --promote
 
 `scripts/audit_changelog_coverage.py` is a separate reconciliation backstop, not part of assembly. It queries merged PRs in `langchain-ai/langchainplus` through authenticated, read-only `gh` commands over a contiguous date window (14 days by default), narrowing searches to seven-day subwindows to avoid GitHub's result cap. It reports candidate user-facing `feat` and `fix` PRs that lack either a fragment in the PR diff or a matching `pr:` field; a human dispositions borderline items through an ignore file. It deliberately over-reports rather than silently dropping potential user-facing changes.
 
-## Self-hosted changelog release notes and navigation
+## Fleet and self-hosted publication
 
-Self-hosted notes are authored directly as `<Update>` blocks in `src/langsmith/self-hosted-changelog.mdx`. The current structure includes tagged stable and preview releases, version details, release-specific changes, and Helm-chart download links. For example, the stable `langsmith-0.17.0` release is presented alongside stable patch releases and preview release candidates. This is a different release cadence and source of truth from the weekly Cloud/Fleet fragment workflow.
+Fleet's route file is deliberately thin: it imports `FleetChangelog` from `/snippets/langsmith/fleet-changelog.mdx` and renders that component. The weekly Fleet `<Update>` blocks, including Fleet-specific RSS titles, live in the snippet. Update the snippet when authoring Fleet release notes; do not paste an assembler block into the route shell.
+
+Self-hosted notes are authored directly as `<Update>` blocks in `src/langsmith/self-hosted-changelog.mdx`. The current structure includes tagged stable and preview releases, version details, release-specific changes, and Helm-chart download links. For example, the stable `langsmith-0.17.0` release is presented alongside stable patch releases and preview release candidates. This is a different release cadence and source of truth from both the Cloud fragment workflow and the Fleet snippet.
 
 `src/changelog-navigation.js` enhances only `/langsmith/self-hosted-changelog`. On that route, it selects visible `h2` elements whose rendered IDs match exactly `langsmith-<major>-<minor>-0`: stable minor-release chapters. Patches, release candidates, categories, and hidden headings are intentionally excluded. It marks selected headings and builds a **Minor releases** link index at the start of `#content`; when `#content-side-layout` exists, it also builds a sidebar index. Without that layout, the inline index is explicitly a fallback.
 
